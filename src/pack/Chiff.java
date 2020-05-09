@@ -99,7 +99,7 @@ public class Chiff {
 		
 		JLabel lblNewLabel_2 = new JLabel("Texte (Uniquement  les caract\u00E8re ASCII de 0 \u00E0 127)");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setBounds(10, 100, 285, 14);
+		lblNewLabel_2.setBounds(10, 100, 340, 14);
 		panel.add(lblNewLabel_2);
 		
 		txtRsultat = new JTextField();
