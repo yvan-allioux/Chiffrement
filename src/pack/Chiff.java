@@ -55,7 +55,7 @@ public class Chiff {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frame .
 	 */
 	private void initialize() {
 		frmChiffrement = new JFrame();
