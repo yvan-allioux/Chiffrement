@@ -9,12 +9,15 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.Insets;
 
 public class Chiff {
 
@@ -77,38 +80,41 @@ public class Chiff {
 		
 		JLabel lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setBounds(129, 72, 295, 14);
+		lblNewLabel_4.setBounds(123, 72, 301, 14);
 		panel.add(lblNewLabel_4);
 		String cle2="147852369";
 		lblNewLabel_4.setText(cle2);
 		
 		textField = new JTextField();
-		textField.setBounds(76, 41, 249, 20);
+		textField.setBounds(76, 41, 231, 20);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("ok");
+		btnNewButton_1.setFocusPainted(false);
+		btnNewButton_1.setMargin(new Insets(2, 0, 2, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String cle2 = textField.getText();
 				lblNewLabel_4.setText(cle2);				
 			}
 		});
-		btnNewButton_1.setBounds(335, 40, 89, 23);
+		btnNewButton_1.setBounds(317, 40, 57, 23);
 		panel.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Texte (Uniquement  les caract\u00E8re ASCII de 0 \u00E0 127)");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setBounds(10, 100, 285, 14);
+		lblNewLabel_2.setBounds(10, 100, 340, 14);
 		panel.add(lblNewLabel_2);
 		
 		txtRsultat = new JTextField();
 		txtRsultat.setText("");
-		txtRsultat.setBounds(20, 125, 404, 23);
+		txtRsultat.setBounds(10, 125, 364, 23);
 		panel.add(txtRsultat);
 		txtRsultat.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("Chiffre");
+		btnNewButton_2.setFocusPainted(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//chiffre
@@ -152,10 +158,11 @@ public class Chiff {
 				
 			}
 		});
-		btnNewButton_2.setBounds(230, 11, 194, 23);
+		btnNewButton_2.setBounds(224, 11, 200, 23);
 		panel.add(btnNewButton_2);
 		
 		JButton btnNewButton = new JButton("D\u00E9chiffre");
+		btnNewButton.setFocusPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//dechiffre
@@ -208,10 +215,11 @@ public class Chiff {
 					txtRsultat.setText(resulta);
 			}
 		});
-		btnNewButton.setBounds(10, 11, 194, 23);
+		btnNewButton.setBounds(10, 11, 200, 23);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.setFocusPainted(false);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Random rand = new Random();
@@ -228,10 +236,37 @@ public class Chiff {
 		btnNewButton_3.setBounds(10, 43, 19, 20);
 		panel.add(btnNewButton_3);
 		
-		JLabel lblNewLabel_3 = new JLabel("-1.1-");
-		lblNewLabel_3.setForeground(Color.WHITE);
+		JLabel lblNewLabel_3 = new JLabel("-1.2-");
+		lblNewLabel_3.setForeground(Color.GRAY);
 		lblNewLabel_3.setBounds(391, 97, 33, 14);
 		panel.add(lblNewLabel_3);
+		
+		JButton btnNewButton_4 = new JButton("Copier");
+		btnNewButton_4.setFocusPainted(false);
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String text = txtRsultat.getText();
+				StringSelection ss = new StringSelection(text);
+				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+			}
+		});
+		btnNewButton_4.setMargin(new Insets(2, -10, 2, -10));
+		btnNewButton_4.setBounds(384, 125, 40, 23);
+		panel.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Copier");
+		btnNewButton_5.setFocusPainted(false);
+		btnNewButton_5.setMargin(new Insets(2, -10, 2, -10));
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//cle copy
+				String cle = lblNewLabel_4.getText();
+				StringSelection ss = new StringSelection(cle);
+				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+			}
+		});
+		btnNewButton_5.setBounds(384, 40, 40, 23);
+		panel.add(btnNewButton_5);
 		
 	
 		
